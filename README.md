@@ -26,4 +26,43 @@ This is a backend implementation of an Airbnb-like booking platform built with D
 | API Documentation   | OpenAPI (Swagger), GraphQL (optional) |
 | CI/CD               | GitHub Actions (planned)        |
 
-## 🧱 Project Architecture (Planned)
+##  🧑‍🤝‍🧑 Team Roles
+
+Based on the article, the following roles are integral to a software development project:
+
+* **Business Analyst (BA)**
+    * Understands customer's business processes.
+    * Translates customer business needs into actionable requirements.
+
+* **Product Owner (PO)**
+    * Responsible for the product vision and its evolution.
+    * Ensures the final product aligns with customer requirements.
+
+* **Project Manager (PM)**
+    * Ensures product delivery (or parts thereof) are on time and within budget.
+    * Manages and motivates the software development team.
+
+* **UI/UX Designer**
+    * Designs the product interface and researches on user interactions to best serve the customer
+
+* **Software Architect**
+    * Designs a high-level software architecture
+    * Selects appropriate tools and platforms to implement the product vision
+    * Sets up code quality standards and performs code reviews
+
+* **Software Developers**
+    * Engineers and stabilizes the product
+    * Solves any technical problems emerging during the development lifecycle
+
+* **Quality Assurance Engineers**
+    * Makes sure an application performs according to requirements
+    * Spots functional and non-functional defects
+
+* **Test Automation Engineers**
+    * Designs a test automation ecosystem
+    * Writes and maintains test scripts for automated testing
+
+* **DevOps Engineer**
+    * Facilitates cooperation between development and operations teams
+    * Builds continuous integration and continuous delivery (CI/CD) pipelines for faster delivery
+
