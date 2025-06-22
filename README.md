@@ -229,3 +229,38 @@ We configure CORS headers to only allow trusted frontend domains. Django’s CSR
 
 ### ✅ Error Management
 All internal errors are logged securely. Error responses to clients are sanitized to avoid leaking implementation details or stack traces.
+
+
+## 🚀 CI/CD Pipeline
+
+This project integrates Continuous Integration and Continuous Deployment (CI/CD) practices to ensure consistent code quality and smooth delivery workflows.
+
+### 🔁 Continuous Integration (CI)
+
+CI ensures that every push to the repository triggers automated checks that validate the codebase. These checks include:
+
+- ✅ Running unit and integration tests
+- ✅ Code linting to enforce formatting and style
+- ✅ Static analysis to catch errors before deployment
+
+**Tool Used**: GitHub Actions — used to define workflows that run every time code is pushed or a pull request is created.
+
+### 🚀 Continuous Deployment (CD)
+
+CD automates the deployment of code to staging or production environments once it passes CI checks. This helps reduce human error, ensures consistency, and accelerates the release cycle.
+
+Planned Deployment Stack:
+- **Docker**: Used to containerize the backend application
+- **Render or Railway**: Potential hosting options for the live app
+- **PostgreSQL (Managed)**: Hosted database used across environments
+
+### 📦 Pipeline Flow
+
+1. Developer pushes code to GitHub (`git push`)
+2. GitHub Actions runs:
+   - Test suite (`pytest`)
+   - Linting checks (`flake8`)
+3. If all checks pass, the latest build is deployed automatically
+4. Notification sent to developer or admin team
+
+This automation helps maintain velocity without sacrificing code quality.
