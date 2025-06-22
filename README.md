@@ -147,3 +147,56 @@ The backend relies on a relational database schema optimized for bookings, payme
 - Each Booking has one Payment.
 - Users can review multiple Properties.
 - Each Property can have many Reviews.
+
+## 🔍 Feature Breakdown
+
+The Airbnb Clone includes several core features that simulate the functionality of a real-world booking platform. These features are developed with RESTful APIs and aligned with industry best practices.
+
+### 👥 User Management
+Users can register, log in, and manage their profiles securely. Authentication is implemented using JWT tokens to protect sensitive user data and restrict access to authorized endpoints.
+
+### 🏘️ Property Listings
+Hosts can create, update, view, and delete property listings. Each property contains information such as location, pricing, and description. Listings are tied to the host's user ID.
+
+### 📆 Booking System
+Users can book properties by selecting check-in and check-out dates. The system prevents overlapping bookings and supports real-time availability checks. Bookings are associated with both the user and the property.
+
+### 💳 Payment Processing
+Upon booking, users can initiate payments. The system records payment details and links them to the corresponding booking. This ensures transparent and auditable transaction records.
+
+### ⭐ Review System
+After a stay, guests can leave a review and rating for the property. Each review is tied to a user and a property, enhancing credibility and helping future guests make informed decisions.
+
+---
+
+## 🚀 Advanced Feature Edge (Future-Proofing)
+
+These advanced features are designed to simulate a production-level platform, elevating the project beyond a basic clone and preparing for scalability and enterprise deployment.
+
+### 💬 Real-Time Messaging System (Optional)
+Enables direct communication between hosts and guests. Could be implemented using WebSockets or third-party APIs like Pusher. Messages are linked to users and bookings, improving coordination and trust.
+
+### 🛠️ Admin Dashboard (Moderation Tools)
+An internal tool for admins to:
+- View flagged reviews or suspicious activity
+- Suspend or verify users
+- Delete abusive content
+Provides platform control and moderation capacity for real-world deployment.
+
+### 🔔 Booking Notifications (Asynchronous Task Queue)
+Implemented using Celery + Redis. Handles:
+- Email confirmations for bookings
+- Alerts to hosts when new bookings are made
+- Reminders before check-in
+
+This decouples non-critical tasks from the request cycle, improving API responsiveness.
+
+### 📊 Analytics and Metrics (Admin-Level)
+Track metrics like:
+- Number of bookings per property
+- Top-reviewed hosts
+- Average booking length
+Use tools like Django Admin Stats or integrate with Prometheus + Grafana for dashboards.
+
+### 🧾 Activity Logs and Audit Trail
+For security and traceability, each sensitive action (e.g., payment, booking cancelation) is logged. Helps with debugging, fraud detection, and compliance readiness.
