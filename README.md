@@ -94,3 +94,56 @@ Docker containerizes the backend environment, ensuring consistent behavior acros
 
 ### 🚦 GitHub Actions (CI/CD)
 GitHub Actions automates testing and deployment. Every time code is pushed, the pipeline ensures it’s linted, tested, and deployed if stable — helping maintain production-grade quality.
+
+
+## 🧱 Database Design
+
+The backend relies on a relational database schema optimized for bookings, payments, and user interactions. Below is a simplified breakdown of the key entities and their relationships.
+
+### 👤 User
+- id (Primary Key)
+- name
+- email
+- password
+- is_host (Boolean to differentiate hosts from guests)
+
+### 🏠 Property
+- id
+- title
+- description
+- location
+- price_per_night
+- host_id (Foreign Key → User)
+
+### 📅 Booking
+- id
+- user_id (Foreign Key → User)
+- property_id (Foreign Key → Property)
+- start_date
+- end_date
+- status
+
+### 💳 Payment
+- id
+- booking_id (Foreign Key → Booking)
+- amount
+- payment_method
+- status
+
+### ✍️ Review
+- id
+- user_id (Foreign Key → User)
+- property_id (Foreign Key → Property)
+- rating
+- comment
+- created_at
+
+### 🔄 Relationships Overview
+
+- A User can be a host or guest.
+- A Host can own multiple Properties.
+- A Guest can make multiple Bookings.
+- Each Booking is tied to one Property and one User.
+- Each Booking has one Payment.
+- Users can review multiple Properties.
+- Each Property can have many Reviews.
