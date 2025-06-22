@@ -200,3 +200,32 @@ Use tools like Django Admin Stats or integrate with Prometheus + Grafana for das
 
 ### 🧾 Activity Logs and Audit Trail
 For security and traceability, each sensitive action (e.g., payment, booking cancelation) is logged. Helps with debugging, fraud detection, and compliance readiness.
+
+
+## 🔐 API Security
+
+Security is a foundational pillar of this project. We implement best practices to safeguard user data, prevent unauthorized access, and protect payment integrity.
+
+### ✅ Authentication
+Users must log in to access protected routes. We use JWT (JSON Web Tokens) to ensure only verified users can interact with the system after login. This secures session-based interactions across the platform.
+
+### ✅ Authorization
+Different user roles (e.g., guest, host, admin) are restricted to only the actions they’re permitted to perform. For example, only hosts can create or delete property listings, and only guests can make bookings.
+
+### ✅ Rate Limiting
+We apply throttling using Django REST Framework to prevent brute force attacks, spamming of endpoints, and DDoS-style abuse.
+
+### ✅ Input Validation
+All incoming data (e.g., booking dates, property info) is validated to prevent SQL injection, XSS, or malformed payloads.
+
+### ✅ Secure Password Handling
+Passwords are never stored in plaintext. Django's built-in `pbkdf2` password hashing ensures that even if the database is compromised, credentials remain protected.
+
+### ✅ HTTPS Encryption
+All traffic between the frontend and backend is encrypted using HTTPS (SSL). This ensures that sensitive data like passwords and payments are never transmitted in plain text.
+
+### ✅ CSRF and CORS Protection
+We configure CORS headers to only allow trusted frontend domains. Django’s CSRF protection helps prevent cross-site request forgery attacks on authenticated endpoints.
+
+### ✅ Error Management
+All internal errors are logged securely. Error responses to clients are sanitized to avoid leaking implementation details or stack traces.
