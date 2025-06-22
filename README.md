@@ -66,3 +66,31 @@ Based on the article, the following roles are integral to a software development
     * Facilitates cooperation between development and operations teams
     * Builds continuous integration and continuous delivery (CI/CD) pipelines for faster delivery
 
+
+## 🚀 Technology Stack
+
+This project uses a modern backend architecture composed of scalable and production-ready technologies. Each component plays a specific role in enabling clean APIs, high performance, and smooth deployment.
+
+### 🐍 Django
+Django is a high-level Python web framework used to develop the core backend of this project. It provides built-in tools for ORM, admin panel, and URL routing — allowing rapid development with minimal boilerplate.
+
+### 📦 Django REST Framework (DRF)
+DRF is used to build RESTful APIs for user management, properties, bookings, and reviews. It provides serializers, viewsets, and permission layers that ensure secure and consistent API behavior.
+
+### 🐘 PostgreSQL
+PostgreSQL is the primary relational database system used in this project. It's reliable, scalable, and supports complex queries — ideal for handling structured data like users, properties, and bookings.
+
+### 🔍 GraphQL
+GraphQL is integrated alongside REST to enable flexible and efficient querying. It reduces over-fetching and under-fetching of data by allowing clients to specify exactly what they need.
+
+### ⚙️ Celery
+Celery is an asynchronous task queue used to handle time-intensive operations like sending confirmation emails or payment processing, so the app remains responsive.
+
+### 🔄 Redis
+Redis acts as both a cache layer and a Celery broker. It improves speed by caching frequent queries and enables task distribution across workers.
+
+### 🐳 Docker
+Docker containerizes the backend environment, ensuring consistent behavior across development, staging, and production. It simplifies dependency management and deployment.
+
+### 🚦 GitHub Actions (CI/CD)
+GitHub Actions automates testing and deployment. Every time code is pushed, the pipeline ensures it’s linted, tested, and deployed if stable — helping maintain production-grade quality.
